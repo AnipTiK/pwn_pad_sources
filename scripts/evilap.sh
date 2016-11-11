@@ -4,6 +4,10 @@
 PS1=${PS1//@\\h/@evilap}
 clear
 
+#Set ctrl c (break) to stop evilap gracefully and restore orignal hostname and mac address
+trap f_endclean INT
+trap f_endclean KILL
+
 #this block controls the features for px_interface_selector
 include_null=1
 include_extwifi=0
